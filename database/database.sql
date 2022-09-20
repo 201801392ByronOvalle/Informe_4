@@ -1,0 +1,9 @@
+CREATE DATABASE ng_grupo5_db;
+USE ng_grupo5_db;
+
+CREATE TABLE login(
+user INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+password VARCHAR(180)
+);
+
+DESCRIBE login;
