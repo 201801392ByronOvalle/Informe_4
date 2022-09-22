@@ -1,5 +1,7 @@
 import { Router } from "express"; 
 
+import ingesController from '../controllers/ingesController'; 
+
 class IngesRoutes {
     public router : Router = Router();
 
@@ -8,7 +10,7 @@ class IngesRoutes {
     }
 
     config(): void {
-        this.router.get('/', (req, res) => res.send('Soy la pagina tipo Face pero para Inges'));
+        this.router.get('/', ingesController.index);
     }
 }
 

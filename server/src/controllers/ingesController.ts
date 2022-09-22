@@ -2,8 +2,8 @@ import {Request, Response} from 'express';
 
 class IngesController {
 
-    index (req: Request, res: Response) {
-        res.send('Soy la pagina principal')
+    public index (req: Request, res: Response) {
+        res.send('Soy la pagina principal tipo Face para Inges')
     } 
 }
 
