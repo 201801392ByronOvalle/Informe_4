@@ -1,0 +1,10 @@
+CREATE DATABASE grupo5_db2;
+USE grupo5_db2;
+
+CREATE TABLE inges(
+idcurso INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+catedratico VARCHAR(180),
+nombrecurso VARCHAR(180)
+);
+
+DESCRIBE inges;

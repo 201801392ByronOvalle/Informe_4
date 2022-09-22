@@ -1,4 +1,5 @@
 import {Request, Response} from 'express';
+//Aqui va el import de la db 2 de inges
 
 class IngesController {
 
