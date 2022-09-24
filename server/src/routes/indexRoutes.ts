@@ -10,6 +10,7 @@ class IndexRoutes {
 
     config(): void {
         this.router.get('/', indexController.index);
+        this.router.post('/', indexController.create)
     }
 }
 
