@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from 'src/app/models/loging';
 import { LogingsService } from '../../services/logings.service';
 
 @Component({
@@ -8,17 +7,13 @@ import { LogingsService } from '../../services/logings.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  usuarios: any = [];
-
+  
   constructor(private logingsService: LogingsService) { }
 
   ngOnInit(): void {
     this.logingsService.getUsuarios().subscribe(
-      res => {
-        this.usuarios = res; 
-      },
-      err => console.error(err)
+      res => console.log(res),
+      err => console.log(err) 
     );
   }
 }

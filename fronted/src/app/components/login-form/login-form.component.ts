@@ -27,7 +27,7 @@ export class LoginFormComponent implements OnInit {
     );
   }
 
-  saveUser() {
+  saveNewUser() {
     this.logingsService.guardarUsuario(this.users).subscribe(
       res => {
         console.log(res);

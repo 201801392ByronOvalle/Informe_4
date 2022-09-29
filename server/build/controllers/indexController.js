@@ -16,26 +16,48 @@ exports.indexController = void 0;
 // LLamada a la Base de Datos
 const database_1 = __importDefault(require("../database"));
 class IndexController {
+    //Consulta a la base datos TODOS los usuarios Get
     index(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const usuarios = database_1.default.query('SELECT * FROM login');
-            res.json(usuarios);
+            database_1.default.query('SELECT * FROM login', function (error, lista) {
+                if (error) {
+                    res.status(400).send({ text: 'Error al obtener datos de Usuario' });
+                }
+                else {
+                    res.status(200).send(lista);
+                }
+            });
         });
     }
+    //Consultar un usuario GetOne
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { carnet } = req.params;
-            const users = database_1.default.query('SELECT * FROM login WHERE carnet = ?', [carnet]);
-            console.log(users);
-            res.json({ text: 'Usuario Encontrado' });
+            const users = database_1.default.query('SELECT * FROM login WHERE carnet = ?', [carnet], function (error, carnet) {
+                if (error) {
+                    res.status(400).send({ text: 'Error de carnet de Usuario' });
+                }
+                else {
+                    res.status(200).send(carnet);
+                }
+            });
         });
     }
+    //Creacion de un usuario POST   
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            database_1.default.query('INSERT INTO login set ?', [req.body]);
-            res.json({ message: 'Registro de Usuario Guardado' });
+            database_1.default.query('INSERT INTO login set ?', [req.body], function (error, newUser) {
+                if (error) {
+                    res.status(400).send({ text: 'Error al ingresar usuario' });
+                }
+                else {
+                    res.status(200).send(newUser);
+                }
+            });
+            ;
         });
     }
+    //Actualizacion de contraseña UPDATE
     update(req, res) {
         res.json({ text: 'Actualizando contraseña ' + req.params.carnet });
     }

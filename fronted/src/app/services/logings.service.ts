@@ -12,19 +12,19 @@ export class LogingsService {
   constructor(private http: HttpClient) { }
 
   getUsuarios(){
-    return this.http.get(`${this.API_URI}/inicio`);
+    return this.http.get(`${this.API_URI}`);
   }
 
   getUsuario(carnet: string) {
-    return this.http.get(`${this.API_URI}/inicio/${carnet}`);
+    return this.http.get(`${this.API_URI}/${carnet}`);
   }
 
   guardarUsuario(usuario: Usuario) {
-    return this.http.post(`${this.API_URI}/inicio`, usuario);
+    return this.http.post(`${this.API_URI}`, usuario);
   }
 
   updatePassword(carnet: string, updatePassword: Usuario) {
-    return this.http.put(`${this.API_URI}/inicio/${carnet}`, updatePassword); 
+    return this.http.put(`${this.API_URI}/${carnet}`, updatePassword); 
   }
 
 }

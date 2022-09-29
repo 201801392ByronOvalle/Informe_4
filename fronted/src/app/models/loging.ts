@@ -1,6 +1,6 @@
 export interface Usuario {
     carnet?: number;
-    user: string;
-    password: string;
-    mail: string;
+    user?: string;
+    password?: string;
+    mail?: string;
 }
