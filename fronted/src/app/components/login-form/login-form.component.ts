@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/models/loging';
+import { LogingsService } from '../../services/logings.service';
 
 @Component({
   selector: 'app-login-form',
@@ -6,10 +8,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent implements OnInit {
+  
+  usuarios: any = [];
+  users: Usuario = {
+    carnet: 0,
+    user: '',
+    password: '',
+    mail: ''
+  };
 
-  constructor() { }
+  constructor(private logingsService: LogingsService) { }
 
   ngOnInit(): void {
+    this.logingsService.getUsuarios().subscribe(
+      res => {
+        this.usuarios = res; 
+      }
+    );
+  }
+
+  saveUser() {
+    this.logingsService.guardarUsuario(this.users).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.error(err)
+    )
   }
 
 }

@@ -10,11 +10,6 @@ import { LogingsService } from '../../services/logings.service';
 export class LoginComponent implements OnInit {
 
   usuarios: any = [];
-  users: Usuario = {
-    carnet: 0,
-    user: '',
-    password: ''
-  };
 
   constructor(private logingsService: LogingsService) { }
 
@@ -26,9 +21,4 @@ export class LoginComponent implements OnInit {
       err => console.error(err)
     );
   }
-
-  saveUser() {
-    console.log(this.users);
-  }
-
 }
