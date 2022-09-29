@@ -8,20 +8,30 @@
       </ul>
     </div>
   </nav>
-
-  <form style="max-width:319px">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-    <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+<body>
+  <div class="container">
+    <div class="row vh-100 justify-content-center align-items-center">
+      <div class="col-auto bg-light p-5">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="card-footer">
+            <div class="d-flex justify-content-center links">
+              Aun no has creado una cuenta?<a routerLink="/inicio/registro" routerLinkActive="active">Registrate</a>
+            </div>
+            <div class="d-flex justify-content-center">
+              <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+        </form>
+        </div>
+      </div>
+  </div>
+</body>
