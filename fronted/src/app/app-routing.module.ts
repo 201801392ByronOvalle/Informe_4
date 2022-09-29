@@ -5,6 +5,7 @@ import{ LoginComponent } from './components/login/login.component';
 import{ LoginFormComponent } from './components/login-form/login-form.component';
 import{UserListComponent} from './components/user-list/user-list.component';
 import{RestablecerComponent} from './components/restablecer/restablecer.component';
+import{SearchComponent} from './components/search/search.component';
 
 const routes: Routes = [
   {
@@ -27,7 +28,11 @@ const routes: Routes = [
   {
     path: 'inicio/restablecer',
     component: RestablecerComponent
-  }
+  },
+  {
+    path: 'inicio/portal/search',
+    component: SearchComponent
+  },
 ];
 
 @NgModule({

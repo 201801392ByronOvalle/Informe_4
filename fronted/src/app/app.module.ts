@@ -11,6 +11,7 @@ import { RestablecerComponent } from './components/restablecer/restablecer.compo
 
 import { LogingsService } from './services/logings.service'
 import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     LoginFormComponent,
     UserListComponent,
     LoginComponent,
-    RestablecerComponent
+    RestablecerComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
