@@ -4,12 +4,12 @@
         <div class="col-auto bg-light p-5">
           <form>
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <label for="exampleInputEmail1">Carnet</label>
+              <input type="number" class="form-control" [(ngModel)] = "users.carnet" placeholder="Ingrese su Carnet">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input type="password" class="form-control" placeholder="Password" [(ngModel)] = "users.password">
             </div>
             <div class="card-footer">
               <div class="d-flex justify-content-center links">
@@ -19,7 +19,7 @@
                 <a routerLink="/inicio/restablecer" routerLinkActive="active">¿Olvidaste tu contraseña?</a>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary" routerLink="/inicio/portal" routerLinkActive="active">Iniciar Sesión</button>
+            <button type="submit" class="btn btn-primary" (click)="saveUser()" routerLink="/inicio/portal" routerLinkActive="active">Iniciar Sesión</button>
           </form>
           </div>
         </div>

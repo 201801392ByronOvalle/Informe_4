@@ -9,7 +9,9 @@ class IndexRoutes {
     }
     config() {
         this.router.get('/', indexController_1.indexController.index);
+        this.router.get('/:carnet', indexController_1.indexController.getOne);
         this.router.post('/', indexController_1.indexController.create);
+        this.router.put('/:carnet', indexController_1.indexController.update);
     }
 }
 const indexRoutes = new IndexRoutes();
