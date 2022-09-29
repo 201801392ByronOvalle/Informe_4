@@ -7,6 +7,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { LoginComponent } from './components/login/login.component';
+import { RestablecerComponent } from './components/restablecer/restablecer.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { LoginComponent } from './components/login/login.component';
     NavigationComponent,
     LoginFormComponent,
     UserListComponent,
-    LoginComponent
+    LoginComponent,
+    RestablecerComponent
   ],
   imports: [
     BrowserModule,
