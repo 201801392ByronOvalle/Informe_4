@@ -22,11 +22,22 @@ class IndexController {
             res.json(usuarios);
         });
     }
+    getOne(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { carnet } = req.params;
+            const users = database_1.default.query('SELECT * FROM login WHERE carnet = ?', [carnet]);
+            console.log(users);
+            res.json({ text: 'Usuario Encontrado' });
+        });
+    }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             database_1.default.query('INSERT INTO login set ?', [req.body]);
             res.json({ message: 'Registro de Usuario Guardado' });
         });
+    }
+    update(req, res) {
+        res.json({ text: 'Actualizando contraseña ' + req.params.carnet });
     }
 }
 exports.indexController = new IndexController();

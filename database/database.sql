@@ -2,6 +2,7 @@ CREATE DATABASE ng_grupo5_db;
 USE ng_grupo5_db;
 --Tabla de usuarios
 CREATE TABLE login(
+carnet INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 user VARCHAR(180) NOT NULL,
 password VARCHAR(180) NOT NULL 
 );
