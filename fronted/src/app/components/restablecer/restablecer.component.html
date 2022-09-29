@@ -2,8 +2,12 @@
     <div class="container">
       <div class="row vh-100 justify-content-center align-items-center">
         <div class="col-auto bg-light p-5">
-            <form>
-                <div class="form-group row">
+            <form method="post"
+            enctype="application/x-www-form-urlencoded"
+            action="https://pizza.example.com/order.cgi">
+            <label>Carnet: <input class="form-control" name="custname" required></label>
+            <label>Email address: <input type=email class="form-control" name="custemail" required></label>
+            <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
@@ -17,11 +21,11 @@
                 </div>
                 <div class="form-group row">
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary" routerLink="/inicio" routerLinkActive="active">Aceptar</button>
+                    <button type="submit" class="btn btn-primary">Aceptar</button>
                 </div>
                 </div>
             </form>
-</div>
-</div>
-</div>
+        </div>
+    </div>
+    </div>
 </body>
