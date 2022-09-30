@@ -15,6 +15,19 @@
 </nav>
 
 <div class="container">
+  <div class="col-md-4" *ngFor="let user of users">
+    <div class="card text-center">
+      <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        {{user.carnet}}
+      </div>
+      <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        {{user.user}}
+      </div>
+      <div class="card-body">
+        <p>{{user.mail}}</p>
+      </div>
+    </div>
+  </div>
   <form>
     <div class="form-group">
       <label for="inputAddress">Usuario que realizo la publicación</label>
