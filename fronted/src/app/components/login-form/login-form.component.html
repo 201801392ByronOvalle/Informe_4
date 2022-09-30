@@ -2,30 +2,30 @@
     <div class="container">
       <div class="row vh-100 justify-content-center align-items-center">
         <div class="col-auto bg-light p-5">
-            <form>
+            <form #data="ngForm" (ngSubmit)="saveNewUser(data)">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="inputnames">Nombre y Apellido</label>
-                        <input type="text" class="form-control" [(ngModel)] = "users.user" placeholder="Byron Ovalle">
+                        <input type="text" class="form-control" name="user" ngModel required #user="ngModel" placeholder="Byron Ovalle">
                     </div>
                     <div class="form-row">
                         <div>
                         <label for="inputCarnet">Carnet</label>
-                        <input type="number" class="form-control" [(ngModel)] = "users.carnet" placeholder="201801392">
+                        <input type="number" class="form-control" name="carnet" ngModel required #carnet="ngModel" placeholder="201801392">
                         </div>
                     </div>
                 </div>
                 <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputEmail4">Email</label>
-                    <input type="text" class="form-control" [(ngModel)] = "users.mail" placeholder="Email">
+                    <input type="text" class="form-control"  name="mail" ngModel required #mail="ngModel" placeholder="Email">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputPassword4">Password</label>
-                    <input type="password" class="form-control" [(ngModel)] = "users.password" placeholder="Password">
+                    <input type="password" class="form-control" name="password" ngModel required #password="ngModel" placeholder="Password">
                 </div>
                 </div>
-                <button type="submit" class="btn btn-primary" (click)="saveNewUser()" routerLink="/inicio" routerLinkActive="active">Registrarse</button>
+                <button type="submit" class="btn btn-primary" >Registrarse</button>
             </form>
         </div>
     </div>

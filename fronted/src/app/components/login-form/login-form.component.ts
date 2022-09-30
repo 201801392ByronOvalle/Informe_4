@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Usuario } from 'src/app/models/loging';
 import { LogingsService } from '../../services/logings.service';
 
@@ -8,7 +9,7 @@ import { LogingsService } from '../../services/logings.service';
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent implements OnInit {
-  
+
   usuarios: any = [];
   users: Usuario = {
     carnet: 0,
@@ -27,7 +28,13 @@ export class LoginFormComponent implements OnInit {
     );
   }
 
-  saveNewUser() {
+  saveNewUser(data: NgForm) {
+    console.log(data.value)
+    this.users.carnet = data.value.carnet
+    this.users.user = data.value.user
+    this.users.mail = data.value.mail
+    this.users.password = data.value.password
+
     this.logingsService.guardarUsuario(this.users).subscribe(
       res => {
         console.log(res);

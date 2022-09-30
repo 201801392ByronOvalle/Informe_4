@@ -32,7 +32,7 @@ class IndexController {
             } else {
                 res.status(200).send(newUser)
             }
-        });;
+        });
     }
 //Actualizacion de contraseña UPDATE
     public update (req: Request, res: Response) {

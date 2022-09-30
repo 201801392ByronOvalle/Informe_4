@@ -54,7 +54,6 @@ class IndexController {
                     res.status(200).send(newUser);
                 }
             });
-            ;
         });
     }
     //Actualizacion de contraseña UPDATE

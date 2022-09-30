@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../models/loging'
+import { NgForm, NgModel } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,7 @@ export class LogingsService {
   }
 
   guardarUsuario(usuario: Usuario) {
+    console.log(usuario)
     return this.http.post(`${this.API_URI}`, usuario);
   }
 
